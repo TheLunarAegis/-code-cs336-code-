@@ -1,0 +1,28 @@
+Student:	Jordan Hordyk
+Date:		9-7-2018
+Class:		CS 336
+Professor:	Keith VanderLinden
+
+Realistic Ideas:
+
+Meme Soundboard
+--Press a button, and it playes a corresponding sound
+  Could also record/upload sounds
+
+Super Simple Chat
+--Chatroom with light or dark theme
+  Consisting of only name, timestamp, and text
+  Nothing fancy, just chat
+
+
+Non-Realistic Ideas:
+
+Nuke Code Sender
+--It's a big button, and when you press it, it outputs a
+  statement containing some satyrical fake nucular codes
+
+Phone Crasher
+--Crashes your phone upon pressing the start button, using errors
+
+Dat Boi Simulator
+--Basically Temple run, but with Dat Boi
