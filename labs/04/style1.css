@@ -1,0 +1,41 @@
+/*	Student:	Jordan Hordyk
+	Date:		9-28-2018
+	Class:		CS 336
+	Lab:		04
+	Professor:	Keith VanderLinden
+*/
+
+
+
+/* page font */
+body {
+	font: 16px "sans-serif", cursive;	
+	background: url("Blue-rule.png");
+}
+
+p:before {
+	content: url("Yellow-pin.png");
+}
+
+/* paragraphs */
+p {
+	color: #00f;
+}
+
+#first {
+	font-style: italic;
+}
+
+/* initial letters */
+strong {
+	background-color: #ddf;
+	color: #f00;
+	font: 200% serif;
+}
+
+.spinach {
+	color: #080;
+	background-color: #ddf;
+}
+
+

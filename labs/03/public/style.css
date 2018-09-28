@@ -1,0 +1,21 @@
+/*Student:		Jordan Hordyk
+ *Date:			9-19-2018
+ *Class:		CS 336
+ *Project:		lab_03
+ *Professor:	Keith VanderLinden
+ */
+
+#main_title {
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.list_space_1 {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.list_space_2 {
+	font-size: 16px;
+	font-weight: normal;
+}

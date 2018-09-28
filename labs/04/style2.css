@@ -1,0 +1,61 @@
+/*	Student:	Jordan Hordyk
+	Date:		9-28-2018
+	Class:		CS 336
+	Lab:		04
+	Professor:	Keith VanderLinden
+*/
+
+h3
+{
+	border-top: 1px solid gray;
+	text-align: center;
+}
+
+/* numbered paragraphs */
+h3.numbered
+{
+	counter-reset: mynum;
+}
+ 
+p.numbered:before 
+{
+  content: counter(mynum) ": ";
+  counter-increment: mynum;
+  font-weight: bold;
+}
+
+ul, #numbered
+{
+  border: 1em solid lightblue;
+  padding-right:1em;
+}
+
+#fixed-pin
+{
+  position:fixed;
+  top: 3px;
+  right: 3px;
+}
+
+ul
+{
+  border: 10px solid lightblue;
+}
+
+li
+{
+  list-style: lower-roman;
+  margin-bottom: 8px;
+}
+
+/* numbered headings */
+body
+{
+	counter-reset: headnum;
+}
+
+h3:before
+{
+  content: "(" counter(headnum, upper-latin) ") ";
+  counter-increment: headnum;
+}
