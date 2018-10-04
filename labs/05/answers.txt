@@ -1,0 +1,15 @@
+/*Student:		Jordan Caleb Hordyk
+ *Date:			9-19-2018
+ *Class:		CS 336
+ *Project:		lab_03
+ *Professor:	Keith VanderLinden
+ */
+ 
+
+3.1		a.	node is what you type in the terminal to run the javascript
+ 			express is how you create the package.json file neccessary to run your server
+		b.	It contains the modules to run the server, converting from js to html, url, and http
+
+3.2		a.	The file locations are static and they files themselves can be changed without needing to re-write the javascript
+		b.	We never removed the code allowing it to, we just gave it alternate functionality
+

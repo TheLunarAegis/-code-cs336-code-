@@ -1,0 +1,98 @@
+<!	Student:	Jordan Hordyk
+	Date:		10-3-2018
+	Class:		CS 336
+	Lab:		05
+	Professor:	Keith VanderLinden
+>
+
+
+
+<html lang="en">
+  <head>
+    <style>
+    	body {
+        	font: 24px Helvetica;
+        	background: #999999;
+    	}
+
+    	#main {
+        	min-height: 800px;
+        	margin: 0px;
+        	padding: 0px;
+        	display: flex;
+        	flex-flow: row;
+    	}
+ 
+    	#main > article {
+        	margin: 0px;
+        	padding: 25px;
+        	border: 1px solid #000000;
+        	border-radius: 0pt;
+        	background: #dddd88;
+        	flex: 3 1 60%;
+        	order: 2;
+		
+    	}
+
+    	#main > nav {
+        	margin: 0px;
+        	padding: 25px;
+        	border: 1px solid #000000;
+        	border-radius: 0pt;
+        	background: #ccccff;
+        	flex: 1 6 20%;
+        	order: 1;
+    	}
+  
+    	#main > aside {
+        	margin: 0px;
+        	padding: 25px;
+        	border: 1px solid #000000;
+        	border-radius: 0pt;
+        	background: #ccccff;
+        	flex: 1 6 20%;
+        	order: 3;
+    	}
+ 
+    	header, footer {
+        	display: block;
+        	margin: 0px;
+        	padding: 25px;
+        	min-height: 100px;
+        	border: 1px solid #000000;
+        	border-radius: 0pt;
+        	background: #ffeebb;
+    	}
+ 
+    	/* Too narrow to support three columns */
+    	@media all and (max-width: 640px) {
+        	#main, #page {
+            	flex-direction: column;
+        	}
+
+        	#main > article, #main > nav, #main > aside {
+        	/* Return them to document order */
+            	order: 0;
+        	}
+  
+        	#main > nav, #main > aside, header, footer {
+            	min-height: 50px;
+            	max-height: 50px;
+        	}
+    	}
+    </style>
+  </head>
+  <body>
+    <header>header</header>
+    <div id='main'>
+      <article>article</article>
+      <nav>nav</nav>
+      <aside>aside</aside>
+    </div>
+    <footer>footer</footer>
+  </body>
+</html>
+
+
+
+
