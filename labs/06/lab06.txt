@@ -1,0 +1,20 @@
+/*Student:		Jordan Hordyk
+ *Date:			9-19-2018
+ *Class:		CS 336
+ *Project:		lab_03
+ *Professor:	Keith VanderLinden
+ */
+
+
+6.1
+	a.	Curl		Successful:				GET, POST, PUT, DELETE
+					Unsuccessful/Can't:		
+		Dev Tools	Successful:				GET
+					Unsuccessful/Can't:		All the others without any fancyness
+
+	b.	200, OK status
+
+6.2
+	a.	GET and POST
+	b.	The data is being sent back in a json format that we need to parse out.
+		The data is not modified, but is packed into one json file.
