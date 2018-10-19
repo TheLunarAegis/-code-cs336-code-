@@ -1,0 +1,16 @@
+{
+  "name": "lab07",
+  "version": "1.0.0",
+  "description": "lab07 server info",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jordan Hordyk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jquery": "^3.3.1"
+  }
+}
