@@ -1,0 +1,20 @@
+Student:	Jordan Hordyk
+Date:		10-25-2018
+Lab:		08
+Class:		CS 336
+Professor:	Keith Vander Linden
+
+8.2	a.	i.	It is a maintainable frontend.  We don't have to pass HTML, we can pass a tree of subcomponents and still make the comment system work.
+		ii.	It's a JavaScript to XML gap-bridger
+		iii.React wont have to deal with HTML strings, so XSS is fine, otherwise there would be a problem.
+		iv.	Comments are created in the form, the posted to the server, where the server then updates it's database, where all the client sides
+			pull from.  Then all the new pulls have the new posts.
+		v.	Props are immutable items that are used on stage.  Once created they cannot be changed so they must either be used, replaced or deleted.
+			Stages are areas where props can be posted, such as a comment_list.
+			Seeing as you cannot edit props but you can edit stages, stages depend on props being created and deleted.
+
+	b.	i.	The server updated the file to what it had, thus making any changes irrelevant.
+		ii.	We want to wait until the end when we have everything to render so it takes one longer load rather than lots of progressivley larger loads.
+			ReactJS also takes care of the rendering, by loading chunks of items at a time.
+		iii.We get the most up to date information on our page.
+		iv.	We know that there is nothing to reject our comments, so we can optimistaclly update without repercussion.
