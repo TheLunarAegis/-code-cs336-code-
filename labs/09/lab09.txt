@@ -1,0 +1,14 @@
+Student:	Jordan Hordyk
+Date:		11-2-2018
+Class:		CS 336
+Lab:		09
+Professor:	Keith Vander Linden
+
+
+9.1:	A.	It has made the lab into a smaller package.
+		B.	Precompiles the new fancy stuff into old stuff that works on the old internet.
+		C.	Yes, the files have to be in the folder that express is serving up.
+		D.	It prevents the node_module file being loaded, and puts babel-loader in it's place.
+
+9.2:	A.	<>
+
