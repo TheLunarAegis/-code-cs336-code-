@@ -10,5 +10,11 @@ Professor:	Keith Vander Linden
 		C.	Yes, the files have to be in the folder that express is serving up.
 		D.	It prevents the node_module file being loaded, and puts babel-loader in it's place.
 
-9.2:	A.	
+9.2:	A.	Bundle.js is 43220 lines long.  It contains all the javascript to run as fast as possible.
+		B.	We can edit each module seperately without accidentaly changing other modules.
+		C.	Each module is loaded because of dependancy.
 
+9.3:	A.	i:	3001 reacts to all changes made, pretty quickly.  But 3000 does not.
+			ii:	I see all comments in a json format.
+		B.	I would keep this up to date if I were a professional web developer, but
+			as a student I think this is useful knowledge, but not completely necessary.
