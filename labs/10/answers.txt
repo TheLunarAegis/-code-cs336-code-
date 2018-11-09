@@ -1,0 +1,19 @@
+Student:	Jordan Hordyk
+Date:		11-7-2018
+Class:		CS 336
+Lab:		10
+Professor:	Keith Vander Linden
+
+10.	1.	a.	I like MongoDB better.
+			SQL seems more straigth forward and confusing, but more customizable.
+		b.	There would be no possibility for redundancy by the company, only on your end.
+			I could not access it from another machine, unless it's on shared storaged.
+		c.	No, there is no redundancy.
+
+10.	2.	a.	It was better to run "npm start" because it was more streamlined for the user,
+			not the developer.  The goal of this was for the user, not the dev.
+		b.	It changes the collection as the app would, just without running the app.
+			The app also updates on runtime.
+		c.	I think this would work best with a NoSQL database, because Mongodb is a NoSQL
+			database, and it worked much better for this kind of application in my
+			experience.
