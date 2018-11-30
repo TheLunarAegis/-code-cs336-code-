@@ -23,3 +23,4 @@ var Comment = React.createClass({
     );
   }
 });
+
