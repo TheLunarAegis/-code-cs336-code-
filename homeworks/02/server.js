@@ -1,12 +1,12 @@
 /*Student:		Jordan Hordyk
- *Date:			12-26-2018
+ *Date:			11-28-2018
  *Class:		CS 336
- *Homework:		02
- *Professor:	Keith VanderLinden
+ *Lab:			13
+ *Professor:	Keith Vander Linden
  */
 
+var APP_PATH = path.join(__dirname, 'dist');
 var peopleArray = [];
-
 
 const express = require('express');
 const app = express();
@@ -15,16 +15,10 @@ const bodyParser = require("body-parser");
 var fs = require('fs');
 var path = require('path');
 
-
-
-app.use(express.static("public"));
-
+app.use('/', express.static(APP_PATH));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 var peopleFile = path.join(__dirname, 'people.json');
 
@@ -35,9 +29,6 @@ fs.readFile(peopleFile, function (err, data) {
     }
     peopleArray = JSON.parse(data);
 });
-
-
-
 
 app.get('/people', (req, res) => {
     res.json(peopleArray);
@@ -63,10 +54,6 @@ app.post('/people', (req, res) => {
 });
 
 //curl -X POST localhost:3000/people -d '{"id":"911911","firstName":"testing","lastName":"POSTINCURL","startDate":"0002-12-12"}' -H 'Content-Type: application/json'
-
-
-
-
 app.post('/getPerson', (req, res) => {
     var requestedID = req.body.id;
     var person = getPerson(req.body.id);
@@ -91,11 +78,7 @@ app.get('/person/:id', (req, res) => {
 });
 
 // New Delete ID
-
-
 //curl -X DELETE localhost:3000/person/1 -H 'Content-Type: application/json'
-
-
 app.delete('/person/:id', (req, res) => {
     var idToDelete = req.params.id;
 
@@ -114,8 +97,6 @@ app.delete('/person/:id', (req, res) => {
 });
 
 //curl -X PUT localhost:3000/person/911911 -d '{"id":"911911","firstName":"testing","lastName":"POSTINCURL_UPDATED","startDate":"0002-12-12"}' -H 'Content-Type: application/json'
-
-
 // PUT / UPDATE 
 app.put('/person/:id', function (req, res) {
     for (var i = 0; i < peopleArray.length; i++) {
@@ -134,7 +115,6 @@ app.put('/person/:id', function (req, res) {
 
 });
 
-
 app.get('/person/:id/name', (req, res) => {
     var request = req.params.id;
     var response = getName(request);
@@ -145,8 +125,6 @@ app.get('/person/:id/name', (req, res) => {
     }
 });
 
-
-
 app.get('/person/:id/years', (req, res) => {
 	var request = req.params.id;
     var response = getYears(request);
@@ -156,7 +134,6 @@ app.get('/person/:id/years', (req, res) => {
         res.sendStatus(404);
     }
 });
-
 
 function getYears(id) {
     var today = new Date();
@@ -188,12 +165,10 @@ function getPerson(id) {
     return '404';
 }
 
-
 // NEW: 
-
-
 app.all("*", (req, res) => {
     res.sendStatus(404);
 })
 
+app.use('*', express.static(APP_PATH));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
