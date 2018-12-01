@@ -1,0 +1,18 @@
+Student:	Jordan Hordyk
+Date:		12-1-2018
+Class:		CS 336
+Lab:		13
+Professor:	Keith Vander Linden
+
+13	.1	.a	It adds broswer history functions.
+
+		.b	Browser history, because it is more universal.
+
+		.c	Because the internet isn't made to do this kind of thing.
+			We have to change a lot of stuff to add most new functionality.
+
+13	.2	.a	
+
+		.b	
+
+		.c	
