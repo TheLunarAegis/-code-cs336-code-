@@ -1,9 +1,13 @@
-/*Student:		Jordan Hordyk
- *Date:			11-28-2018
- *Class:		CS 336
- *Lab:			13
- *Professor:	Keith Vander Linden
+/* Student:		Jordan Hordyk
+ * Date:		12-03-2018
+ * Class:		CS 336
+ * Professor:	Keith Vander Linden
+ * Homework:	3
+ *
+ * With assistance from Gavin Martin
  */
+
+//export MONGO_PASSWORD=bjarne1
 
 var peopleArray = [];
 
@@ -13,30 +17,23 @@ const port = 3000;
 const bodyParser = require("body-parser");
 var fs = require('fs');
 var path = require('path');
-
 var MongoClient = require('mongodb').MongoClient;
 var password = process.env.MONGO_PASSWORD;
 var db;
 var peopleArray;
 
 MongoClient.connect('mongodb://cs336:' + password + '@ds255403.mlab.com:55403/cs336', function (err, client) {
-	if (err) {
+    if (err) {
         throw err;
     }
-
     db = client.db('cs336')
-
     db.collection('peoples').find().toArray(function (err, result) {
         if (err) throw err
-
+		
         peopleArray = result;
-
     })
-
     app.listen(app.get('port'), function () {
         console.log('Server started: http://localhost:' + app.get('port') + '/');
-
-
     })
 });
 
@@ -48,12 +45,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// Additional middleware which will set headers that we need on each request.
 app.use(function (req, res, next) {
-    // Set permissive CORS header - this allows this server to be used only as
-    // an API server in conjunction with something like webpack-dev-server.
     res.setHeader('Access-Control-Allow-Origin', '*');
-    // Disable caching so we'll always get the latest comments.
     res.setHeader('Cache-Control', 'no-cache');
     next();
 });
@@ -91,7 +84,6 @@ app.post('/people', (req, res) => {
         startDate: req.body.startDate
     };
     peopleArray.push(person);
-
     var collection = db.collection('peoples');
     collection.insertOne({
         id: req.body.id,
@@ -99,26 +91,23 @@ app.post('/people', (req, res) => {
         lastName: req.body.lastName,
         startDate: req.body.startDate
     });
-
     res.send({
         'content': 'Added: ' + req.body.firstName + " " + req.body.lastName
     });
 });
 
-//curl -X POST localhost:3000/people -d '{"id":"911911","firstName":"testing","lastName":"POSTINCURL","startDate":"0002-12-12"}' -H 'Content-Type: application/json'
 app.post('/getPerson', (req, res) => {
     var requestedID = req.body.id;
     var person = getPerson(req.body.id);
     if (person != '404') {
         res.send({
-            "person": JSON.stringify(person)
+            "peoples": JSON.stringify(person)
         });
     } else {
         res.sendStatus(404);
     }
 });
 
-// NEW GET ID
 app.get('/person/:id', (req, res) => {
     var collection = db.collection('peoples');
     collection.find({}).toArray(function (err, docs) {
@@ -137,8 +126,6 @@ app.get('/person/:id', (req, res) => {
     }
 });
 
-// New Delete ID
-//curl -X DELETE localhost:3000/person/1 -H 'Content-Type: application/json'
 app.delete('/person/:id', (req, res) => {
     db.collection('peoples').find().toArray(function (err, docs) {
         if (err) {
@@ -165,8 +152,6 @@ app.delete('/person/:id', (req, res) => {
     res.send("Person with id: " + idToDelete + " has been removed");
 });
 
-//curl -X PUT localhost:3000/person/911911 -d '{"id":"911911","firstName":"testing","lastName":"POSTINCURL_UPDATED","startDate":"0002-12-12"}' -H 'Content-Type: application/json'
-// PUT / UPDATE 
 app.put('/person/:id', function (req, res) {
 
     db.collection('peoples').find().toArray(function (err, docs) {
@@ -176,7 +161,7 @@ app.put('/person/:id', function (req, res) {
             peopleArray = docs;
         }
     });
-    var collection = db.collection('peoples');
+    var collection = db.collection('poeples');
     var idToUpdate = req.params.id;
 
     collection.updateMany({
@@ -207,7 +192,6 @@ app.get('/person/:id/name', (req, res) => {
             peopleArray = docs;
         }
     });
-	
     var request = req.params.id;
     var response = getName(request);
     if (response != "404") {
@@ -225,7 +209,6 @@ app.get('/person/:id/years', (req, res) => {
             peopleArray = docs;
         }
     });
-
     var response = getYears(req.params.id);
     if (response != "404") {
         res.send(response);
@@ -264,7 +247,6 @@ function getPerson(id) {
     return '404';
 }
 
-// NEW: 
 app.all("*", (req, res) => {
     res.sendStatus(404);
 })
