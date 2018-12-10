@@ -23,14 +23,14 @@ var password = process.env.MONGO_PASSWORD;
 var db;
 var data;
 
-MongoClient.connect('mongodb://cs336:' + password + '@ds255253.mlab.com:55253/my_cs336_database', function (err, client) {
+MongoClient.connect('mongodb://cs336:' + password + '@ds255403.mlab.com:55403/cs336', function (err, client) {
     if (err) {
         throw err;
     }
 
-    db = client.db('my_cs336_database')
+    db = client.db('cs336')
 
-    db.collection('comments').find().toArray(function (err, result) {
+    db.collection('I_forgot').find().toArray(function (err, result) {
         if (err) throw err
 
         data = result;
@@ -73,7 +73,7 @@ app.get('/api/comments', function(req, res) {
 
 app.get('/api/comments', function (req, res) {
     // Get the documents collection
-    var collection = db.collection('comments');
+    var collection = db.collection('I_forgot');
     // Find some documents
     collection.find({}).toArray(function (err, docs) {
         //console.log("Found the following records");
@@ -87,7 +87,7 @@ app.get('/api/comments', function (req, res) {
 app.post('/api/comments', function (req, res) {
 
     // Get the documents collection
-    var collection = db.collection('comments');
+    var collection = db.collection('I_forgot');
     // Insert some documents
     collection.insertOne({
             id: Date.now(),

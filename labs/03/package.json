@@ -1,7 +1,7 @@
 {
-  "name": "03",
+  "name": "lab03",
   "version": "1.0.0",
-  "description": "",
+  "description": "lab03",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "build": "webpack --progress",
+    "dev": "node server.js & webpack-dev-server --progress",
+    "install": "webpack --progress --config ./webpack.production.config.js",
+    "start": "node server.js"
   }
-}
+};
