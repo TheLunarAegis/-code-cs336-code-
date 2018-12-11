@@ -13,4 +13,8 @@
 	2.	a.	I don't have to npm start everytime ?I want to use it, it's always up.
 		b.	They have a team of coders who figured out what needs to be done on
 				specific file types.
-		c.	
+		c.	https://jch32-cs336.herokuapp.com/
+			I tired everything I could to get the Heroku deployment working, but
+				for some reason I can't get the Heroku to work.  It works on the
+				localhost:3000 but not on Heroku.  I checked the mongo password
+				and it's set right.  I can't figure it out.
