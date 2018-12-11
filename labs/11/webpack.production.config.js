@@ -1,10 +1,10 @@
-
-var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+
 module.exports = {
-	entry: [
+    entry: [
         __dirname + '/app/scripts/index.js'
     ],
     output: {
@@ -12,12 +12,18 @@ module.exports = {
         filename: '/bundle.js'
     },
     module: {
-        loaders: [
-            { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
-            { test: /\.css$/,  loader: 'style!css?modules!postcss' }
+        loaders: [{
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: "babel-loader"
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!css?modules!postcss'
+            }
         ]
     },
-	postcss: [
+    postcss: [
         require('autoprefixer')
     ],
     plugins: [

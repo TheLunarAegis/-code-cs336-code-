@@ -1,0 +1,16 @@
+/* Student:		Jordan Hordyk
+ * Date:		12-10-2018
+ * Class:		CS 336
+ * Lab:			11
+ * Professor:	Keith Vander Linden
+ */
+
+11.	1.	a.	Development is easier to edit and test, production takes more time to
+				start and test, but is more suited for, well... production.
+		b.	I have reduced the number of files in the main directory for
+				this application.  The difference between this lab(11) and lab 10.
+
+	2.	a.	I don't have to npm start everytime ?I want to use it, it's always up.
+		b.	They have a team of coders who figured out what needs to be done on
+				specific file types.
+		c.	

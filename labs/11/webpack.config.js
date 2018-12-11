@@ -1,6 +1,6 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 var webpack = require('webpack');
 
-var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: [
@@ -11,14 +11,22 @@ module.exports = {
         filename: '/bundle.js'
     },
     module: {
-        loaders: [
-            { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
-            { test: /\.css$/,  loader: 'style!css?modules!postcss' }
+        loaders: [{
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: "babel-loader"
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!css?modules!postcss'
+            }
         ]
     },
-	plugins: [
-		new HtmlWebpackPlugin({template: __dirname + "/app/index.tmpl.html"}),
-		new webpack.HotModuleReplacementPlugin()
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: __dirname + "/app/index.tmpl.html",
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
         port: 3001,

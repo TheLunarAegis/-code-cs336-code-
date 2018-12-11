@@ -1,4 +1,1 @@
-/node_modules
-/dist
-/mLab_password.txt
-/Heroku.txt
+node_modules/
